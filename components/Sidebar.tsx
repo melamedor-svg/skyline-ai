@@ -8,12 +8,14 @@ import {
   Settings,
   LayoutDashboard,
   Sparkles,
+  Building2,
 } from 'lucide-react';
 
 const navItems = [
   { href: '/', label: 'Home', icon: LayoutDashboard },
   { href: '/dashboard', label: 'Radar', icon: Radar },
   { href: '/pipeline', label: 'Pipeline', icon: GitBranch },
+  { href: '/projects', label: 'פרויקטים', icon: Building2 },
   { href: '/settings', label: 'Settings', icon: Settings },
 ];
 
