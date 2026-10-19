@@ -1,82 +1,70 @@
 import Link from 'next/link';
-import { Radar, GitBranch, Settings, ArrowRight, Sparkles } from 'lucide-react';
+import { Crown, Shield, Briefcase, User, ArrowLeft, Sparkles } from 'lucide-react';
 
-const featureCards = [
+const portals = [
   {
-    href: '/dashboard',
-    title: 'Opportunity Radar',
-    description:
-      'AI agents continuously scan global sources for M&A, tenders, and distressed asset leads.',
-    icon: Radar,
+    href: '/admin',
+    title: 'God Mode - Admin',
+    description: 'שליטה מלאה בפלטפורמה, במשתמשים, במסלולים ובסוכני ה-AI.',
+    icon: Crown,
+    accent: 'from-amber-500/20 to-rose-500/10',
+  },
+  {
+    href: '/club',
+    title: 'Club Portal',
+    description: 'פרסום דרישות רכש וקבלת התאמות שחקנים מבוססות AI.',
+    icon: Shield,
     accent: 'from-indigo-500/20 to-cyan-500/10',
   },
   {
-    href: '/pipeline',
-    title: 'Deal Pipeline',
-    description:
-      'Track active deals from outreach to closing with automated stage-based workflows.',
-    icon: GitBranch,
+    href: '/agent',
+    title: 'Agent Portal',
+    description: 'ניהול תיק שחקנים והתאמה לדרישות מועדונים פעילות.',
+    icon: Briefcase,
     accent: 'from-emerald-500/20 to-indigo-500/10',
   },
   {
-    href: '/settings',
-    title: 'Platform Settings',
-    description:
-      'Configure AI models, fee structures (Lehman, retainer, success), and agent behavior.',
-    icon: Settings,
-    accent: 'from-amber-500/20 to-rose-500/10',
+    href: '/player',
+    title: 'Player Portal',
+    description: 'פרופיל אישי, ציון TSP, שווי שוק ותובנות לקריירה.',
+    icon: User,
+    accent: 'from-cyan-500/20 to-emerald-500/10',
   },
 ];
 
 export default function HomePage() {
   return (
     <div className="space-y-10">
-      <section className="rounded-2xl border border-nexus-border bg-gradient-to-br from-indigo-500/10 via-nexus-panel to-cyan-500/5 p-10">
-        <div className="flex items-center gap-2 text-sm text-nexus-accent2">
+      <section className="rounded-2xl border border-slate-800 bg-gradient-to-bl from-indigo-500/10 via-slate-900 to-cyan-500/5 p-10">
+        <div className="flex items-center gap-2 text-sm text-cyan-400">
           <Sparkles className="h-4 w-4" />
-          <span className="uppercase tracking-widest">Nexus Platform</span>
+          <span className="tracking-widest">Total Scout AI</span>
         </div>
         <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">
-          AI Global Brokerage, Reimagined.
+          סקאוטינג חכם. עסקאות חכמות יותר.
         </h1>
-        <p className="mt-4 max-w-2xl text-lg text-nexus-muted">
-          Nexus uses autonomous AI agents to detect, qualify, and broker
-          cross-border business opportunities — from sourcing to closing.
+        <p className="mt-4 max-w-2xl text-lg text-slate-400">
+          פלטפורמה אחת לאדמינים, מועדונים, סוכנים ושחקנים — בחרו פורטל כדי להתחיל.
         </p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link
-            href="/dashboard"
-            className="inline-flex items-center gap-2 rounded-lg bg-nexus-accent px-5 py-3 text-sm font-medium text-white transition hover:bg-indigo-500"
-          >
-            Open Radar
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-          <Link
-            href="/pipeline"
-            className="inline-flex items-center gap-2 rounded-lg border border-nexus-border bg-nexus-panel px-5 py-3 text-sm font-medium text-gray-200 transition hover:border-nexus-accent"
-          >
-            View Pipeline
-          </Link>
-        </div>
       </section>
 
       <section>
-        <h2 className="mb-4 text-lg font-medium text-gray-300">Modules</h2>
-        <div className="grid gap-4 md:grid-cols-3">
-          {featureCards.map(({ href, title, description, icon: Icon, accent }) => (
+        <h2 className="mb-4 text-lg font-medium text-slate-300">פורטלים</h2>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {portals.map(({ href, title, description, icon: Icon, accent }) => (
             <Link
               key={href}
               href={href}
-              className={`group rounded-2xl border border-nexus-border bg-gradient-to-br ${accent} p-6 transition hover:border-nexus-accent`}
+              className={`group rounded-2xl border border-slate-800 bg-gradient-to-br ${accent} p-6 transition hover:border-indigo-500`}
             >
-              <div className="mb-4 inline-flex rounded-lg bg-nexus-panel p-2">
-                <Icon className="h-5 w-5 text-nexus-accent2" />
+              <div className="mb-4 inline-flex rounded-lg bg-slate-900 p-2">
+                <Icon className="h-5 w-5 text-cyan-400" />
               </div>
               <h3 className="text-lg font-medium text-white">{title}</h3>
-              <p className="mt-2 text-sm text-nexus-muted">{description}</p>
-              <span className="mt-4 inline-flex items-center gap-1 text-sm text-nexus-accent2 opacity-0 transition group-hover:opacity-100">
-                Open
-                <ArrowRight className="h-3 w-3" />
+              <p className="mt-2 text-sm text-slate-400">{description}</p>
+              <span className="mt-4 inline-flex items-center gap-1 text-sm text-cyan-400 opacity-0 transition group-hover:opacity-100">
+                כניסה
+                <ArrowLeft className="h-3 w-3" />
               </span>
             </Link>
           ))}

@@ -3,9 +3,9 @@ import './globals.css';
 import Sidebar from '@/components/Sidebar';
 
 export const metadata: Metadata = {
-  title: 'Nexus — AI Global Brokerage Platform',
+  title: 'Total Scout AI',
   description:
-    'AI-powered platform that identifies, matches, and brokers global business opportunities.',
+    'פלטפורמת סקאוטינג מבוססת AI למועדונים, סוכנים ושחקנים.',
 };
 
 export default function RootLayout({
@@ -14,12 +14,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-nexus-bg text-gray-200">
-        <div className="flex min-h-screen">
+    <html lang="he" dir="rtl">
+      <body className="min-h-screen bg-slate-950 text-slate-200">
+        <div className="flex min-h-screen flex-col md:flex-row">
           <Sidebar />
           <main className="flex-1 overflow-x-hidden">
-            <div className="mx-auto max-w-7xl px-6 py-8">{children}</div>
+            <div className="mx-auto max-w-7xl px-4 py-8 md:px-6">{children}</div>
           </main>
         </div>
       </body>
