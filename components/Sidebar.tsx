@@ -42,7 +42,7 @@ function WalletWidget() {
         <span>ארנק / מסלול</span>
       </div>
       <p className="mt-2 text-sm font-semibold text-white">
-        מסלול {mockWallet.plan} | {mockWallet.credits} קרדיטים
+        מסלול <bdi>{mockWallet.plan}</bdi> | <bdi>{mockWallet.credits}</bdi> קרדיטים
       </p>
       <p className="mt-1 text-xs text-slate-400">
         מתחדש ב-{new Date(mockWallet.renewsAt).toLocaleDateString('he-IL')}
@@ -132,7 +132,7 @@ export default function Sidebar() {
             Total Scout AI
           </Link>
           <span className="rounded-full border border-slate-800 bg-slate-900 px-3 py-1 text-xs text-slate-200">
-            מסלול {mockWallet.plan} | {mockWallet.credits} קרדיטים
+            מסלול <bdi>{mockWallet.plan}</bdi> | <bdi>{mockWallet.credits}</bdi> קרדיטים
           </span>
         </div>
         <nav aria-label="החלפת פרסונה" className="mt-3 grid grid-cols-4 gap-1">
